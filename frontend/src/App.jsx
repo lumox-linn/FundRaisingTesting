@@ -11,7 +11,8 @@ function App() {
           <RouterView/>
         </Suspense>
       </div>
-    </BrowserRouter>
+    </BrowserRouter>>
+    
   );
 }
 
