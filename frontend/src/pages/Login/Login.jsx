@@ -41,6 +41,7 @@ function Login() {
     }
   };
   const onFinish = async (values) => {
+    console.log(values);
     try {
       if (!register) {
         const res = await apiLogin(values);
@@ -162,25 +163,26 @@ function Login() {
             ) : (
               <li></li>
             )}
-            <Select
-              defaultValue="User"
-              style={{ width: 200 }}
-              onChange={handleChange}
-              options={[
-                {
-                  label: <span>User</span>,
-                  title: "Role",
-                  options: [
-                    { label: <span>User</span>, value: "User" },
-                    { label: <span>Doner</span>, value: "Doner" },
-                    {
-                      label: <span>Platform manager</span>,
-                      value: "Platform Manager",
-                    },
-                  ],
-                },
-              ]}
-            />
+            <Form.Item
+              name="Identity"
+              rules={[{ required: true, message: "Please select a identity" }]}
+              label="Identity"
+            >
+              <Select
+                style={{ width: 200 }}
+                onChange={handleChange}
+                rules={[{ required: true, message: "Province is required" }]}
+                placeholder="Choose your identity"
+                options={[
+                  { label: <span>User admin</span>, value: "User Admin" },
+                  { label: <span>Doner</span>, value: "Doner" },
+                  {
+                    label: <span>Platform manager</span>,
+                    value: "Platform Manager",
+                  },
+                ]}
+              />
+            </Form.Item>
 
             <Form.Item name="remember" valuePropName="checked" label={null}>
               <Checkbox>Remember me</Checkbox>

@@ -3,10 +3,8 @@ import "../navfull/navfull.css";
 function Navfull({
   onLinkClick,
   Router,
-  user,
-  isVisible,
+
   className,
-  setIsVisible,
 }) {
   return (
     <div className={`navfull ${className || ""}`}>

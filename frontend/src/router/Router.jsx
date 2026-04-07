@@ -36,7 +36,7 @@ const Router = [
     element: <Profile />,
     children: [
       {
-        path: "personalInfo",
+        path: "personalinfo",
         stuff: { title: "User Personal Info" },
         element: <Personalinfo />,
       },

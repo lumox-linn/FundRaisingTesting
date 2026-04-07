@@ -23,3 +23,11 @@ export function apiSendCode(data) {
     data: data,
   });
 }
+export function apiLogout(data) {
+  console.log(data);
+  return newRequest({
+    url: "/logout/",
+    method: "post",
+    data: data,
+  });
+}

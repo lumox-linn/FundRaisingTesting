@@ -11,7 +11,16 @@ function RouterView() {
           key={index}
           path={item.path}
           element={React.cloneElement(item.element, { Router })}
-        ></Route>
+        >
+          {item.children &&
+            item.children.map((child, childIndex) => (
+              <Route
+                key={childIndex}
+                path={child.path}
+                element={child.element}
+              />
+            ))}
+        </Route>
       ))}
     </Routes>
   );
